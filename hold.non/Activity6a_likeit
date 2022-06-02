@@ -1,0 +1,30 @@
+#!/bin/sh
+
+
+PAR_A=$1
+PAR_B=$2
+
+
+function numCheck() {
+
+	PAR_A=$PAR_A
+	PAR_B=$PAR_B
+
+	while (( $(echo $PAR_A | grep -E '[[:alpha:]]|[[:punct:]]|[[:space:]]' | wc -l)>0 || $(echo $PAR_B | grep -E '[[:alpha:]]|[[:punct:]]|[[:space:]]' | wc -l)>0 ))
+	do
+		echo -e "Invalid input, try again with two numbers: "
+		read PAR_A PAR_B
+
+	done	
+	break
+
+}
+
+numCheck $PAR_A $PAR_B
+
+if (( $PAR_A > $PAR_B ))
+then
+	echo "True"
+else 
+	echo "False"
+fi

@@ -1,0 +1,10 @@
+#!/bin/sh
+echo -e "\n"
+echo "Hi user, here is a simple summary of your details"
+echo "Your username is: $USER"
+echo "Todays Date:$(date +"%D")"
+echo "Todays Local Time: $(date +"%T")"
+echo "Your current working directory is: $PWD"
+echo "The amount of files in your directory is: $(ls | wc -l)"
+echo "The biggest file in the current directory is: $(du -ah | sort -rh | head -n 2 | tail -n 1)"
+echo -e "\n"

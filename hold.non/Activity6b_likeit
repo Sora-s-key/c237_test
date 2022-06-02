@@ -1,0 +1,27 @@
+#!/bin/bash
+
+PAR_A=$1
+PAR_B=$2
+
+function num_Compare() {
+
+
+
+	PAR_A=$PAR_A
+	PAR_B=$PAR_B
+
+	while (( $(echo $PAR_A | grep -E '[[:alpha:]]|[[:punct:]]|[[:space:]]' | wc -l)>0 || $(echo $PAR_B | grep -E '[[:alpha:]]|[[:punct:]]|[[:space:]]' | wc -l)>0 ))
+        do
+                echo -e "Your input was invalid. Try again and enter two numbers: "
+                read PAR_A PAR_B
+
+        done
+        
+
+}
+
+num_Compare $PAR_A $PAR_B
+
+echo "Difference of your two numbers is $(( $PAR_A-$PAR_B))."
+
+
